@@ -6,4 +6,5 @@ REST API проект для сервиса YaMDb — сбор отзывов о
 Проект YaMDb собирает отзывы пользователей на произведения.
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 Список категорий  может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
+![example workflow](https://github.com/Petrichao/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
