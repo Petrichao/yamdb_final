@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
+load_dotenv("infra/.env")
 BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "m%(5u7nv9j2%@3xb%#c3p-$9&0$kq$j6l@9+@ogairu48a+dy+"
@@ -65,12 +67,12 @@ WSGI_APPLICATION = "api_yamdb.wsgi.application"
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql",
-        'NAME': "postgres",
-        'USER': "postgres",
-        'PASSWORD': "A81708170j",
-        'HOST': "db",
-        'PORT': "5432"
+        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
+        'NAME': os.getenv('DB_NAME', default='postgres'),
+        'USER': os.getenv('POSTGRES_USER', default='postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='A81708170j'),
+        'HOST': os.getenv('DB_HOST', default='db'),
+        'PORT': os.getenv('DB_PORT', default='5432'),
     }
 }
 
